@@ -109,8 +109,8 @@ define('RESPONSE_CHARSET', 'utf-8'); // charset para las respuestas HTTP
 // Parámetros de configuración de la base de datos:
 define('DB_HOST','localhost');  // Host.
 define('DB_USER','root');       // Usuario.
-define('DB_PASS','');           // Password.
-define('DB_NAME','fastlight');  // Nombre de la base de datos.
+define('DB_PASS','root');           // Password.
+define('DB_NAME','segundamano');  // Nombre de la base de datos.
 define('DB_PORT',  3306);       // Puerto.
 define('DB_CHARSET','utf8');    // Codificación de caracteres.
 
