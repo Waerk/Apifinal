@@ -44,6 +44,7 @@
     			<div class="centered m2">
     				<input type="submit" class="button" name="login" value="LogIn">
     			</div>
+    			<a href="/user/register">No estas registrado? Registrate aqui!</a>
     			<div class="right">
     				<a href="/Forgotpassword">Olvidé mi clave</a>
     			</div>

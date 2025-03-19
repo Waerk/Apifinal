@@ -110,7 +110,7 @@ class Base implements TemplateInterface{
                 if($user->isAdmin())
                     $html .= "
                 <span class='pc'> eres
-                    <a class='negrita' href='/Panel/admin'>administrador</a>.
+                    <a class='negrita' href='/User/home'>administrador</a>.
                 </span>";
                                 
                 // pone la imagen de perfil y el enlace a logout
@@ -175,7 +175,19 @@ class Base implements TemplateInterface{
         $html .=   "<li><a href='/'>Inicio</a></li>";
         
         $html .=   "<li><a href='/Anuncio'>Anuncios</a></li>";
-        $html .=   "<li><a href='/Anuncio/create'>Nuevo anuncio</a></li>";
+        $html .= "<li><a href='/contacto'>Contacto</a></li>";
+        if (Login::user() === null) {
+        $html .= "<li><a href='/user/register'>Registrarse</a></li>";
+        }
+        
+        if (Login::user() !== null) {
+            $html .= "<li><a href='/user/home'>Mi Cuenta</a></li>";
+            $html .= "<li><a href='/anuncio/create'>Nuevo Anuncio</a></li>";
+        }
+        
+        if (Login::isAdmin()) {
+            $html .= "<li><a href='/user/list'>Usuarios</a></li>";
+        }
         // Enlace a los ejemplos de maquetación.
         // Lo eliminaremos en producción junto con la carpeta mvc/views/examples y el ExampleController
         $html .=   "<li><a href='/Example'>Ejemplos de maquetación</a></li>";

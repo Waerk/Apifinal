@@ -74,7 +74,7 @@ define('DEFAULT_METHOD', 'index');
 // Email del administrador, para la operación de "contacto".
 // Esta operación no está implementada de serie en FastLight,
 // la implementamos en clase.
-define('ADMIN_EMAIL', 'robert@fastlight.org');
+define('ADMIN_EMAIL', 'waerk36@gmail.com');
 
 // ¿Deben las cadenas vacías ser convertidas a NULL? 
 // se aplica al recuperar los datos de la petición mediante el objeto Request,
@@ -109,7 +109,7 @@ define('RESPONSE_CHARSET', 'utf-8'); // charset para las respuestas HTTP
 // Parámetros de configuración de la base de datos:
 define('DB_HOST','localhost');  // Host.
 define('DB_USER','root');       // Usuario.
-define('DB_PASS','root');           // Password.
+define('DB_PASS','');           // Password.
 define('DB_NAME','segundamano');  // Nombre de la base de datos.
 define('DB_PORT',  3306);       // Puerto.
 define('DB_CHARSET','utf8');    // Codificación de caracteres.
@@ -141,6 +141,8 @@ define('USER_ROLES', [
     'Bloqueado'     => 'ROLE_BLOCKED'
 ]);
 
+
+
 // mensaje que se mostrará al usuario bloqueado cuando intenta hacer Login
 define('BLOCKED_MESSAGE', "Has sido bloqueado por un administrador, si consideras 
                            que es un error puedes contactar mediante el formulario de contacto.");
@@ -154,11 +156,18 @@ define('USER_IMAGE_FOLDER','/images/users');
 // imagen por defecto para los usuarios que no tengan
 define('DEFAULT_USER_IMAGE', 'default.png');
 
+// carpeta para las imagenes de los anuncios
+define('ANUNCIO_IMAGE_FOLDER','/images/anuncios');
+
+// imagen por defecto para los anuncios
+define('DEFAULT_ANUNCIO_IMAGE','default.png');
 
 
 /* -------------------------------------------------------------
  * LOGIN
  * -------------------------------------------------------------*/
+
+define('ADMIN_ROLE', 'ROLE_ADMIN');
 
 define('REDIRECT_AFTER_LOGIN', '/');                // Redirección tras login.
 

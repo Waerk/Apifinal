@@ -75,10 +75,12 @@ class LoginController extends Controller{
         if($identificado->hasRole('ROLE_BLOCKED')){
             
             // flashea el mensaje de error configurado en el fichero de configuración
-            Session::error(BLOCKED_MESSAGE);
+            Session::error('Has sido bloqueado por un administrador, si consideras
+                            que es un error puedes contactar mediante el formulario de contacto.');
+            
             
             // redirecciona a la URL indicada en el fichero de configuración
-            return redirect(BLOCKED_REDIRECT);
+            return redirect('/Contacto');
         }
         
             

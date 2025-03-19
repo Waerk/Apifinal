@@ -11,6 +11,7 @@
 		<link rel="shortcut icon" href="/favicon.ico" type="image/png">
 		<script src="/js/BigPicture.js"></script>
 		<?= $template->css()?>
+		<script src="/js/Preview.js"></script>
 	</head>
 	
 	<body>
@@ -33,15 +34,24 @@
 					<input type="text" name="titulo" value="<?= old('titulo')?>">
 					<br>
 					<label>Descripcion</label>
-					<input type="text" name="descripcion" value="<?= old('descripcion')?>">
+					<textarea name="descripcion"><?= old('descripcion')?></textarea>
 					<br>
 					<label>Precio</label>
 					<input type="number" name="precio" value="<?= old('precio')?>">
 					<br>
+					<label>Imagen</label>
+                    <input type="file" name="imagen" accept="image/*" id="file-with-preview">
 					<div class="centered mt2">
 						<input type="submit" class="button" name="guardar" value="Guardar">
 						<input type="reset" class="button" value="Reset">
 					</div>
+					 <div class="flex1 centrado">
+                    <figure>
+                        <img src="<?= ANUNCIO_IMAGE_FOLDER . '/' . DEFAULT_ANUNCIO_IMAGE ?>"
+                            class="cover" id="preview-image" alt="Previsualización de la imagen">
+                        <figcaption>Previsualización de la imagen</figcaption>
+                    </figure>
+                </div>
 				</div>
 			</form>
 			<div class="centrado my2">
@@ -49,3 +59,6 @@
 				<a class="button" href="/Anuncio/list">Lista de anuncios</a>
 			</div>
 		</main>
+		<?= $template->footer(); ?>
+		</body>
+		</html>

@@ -25,25 +25,46 @@
 		<main>
 			<h1><?= APP_NAME?></h1>
 			<h2>Lista completa de anuncios</h2>
-			
+			<!-- FILTRO -->
+			 <?php
+                if ($filtro) {
+                    echo $template->removeFilterForm($filtro, '/anuncio/list');
+                } else {
+                    echo $template->filterForm(
+                        ['Título' => 'titulo', 'Precio' => 'precio'],
+                        ['Título' => 'titulo', 'Precio' => 'precio'],
+                        'Título',
+                        'Título'
+                    );
+                }
+                ?>
+			<!-- Lista de anuncios -->
 			<?php if($anuncios) {?>
+			<div class="right">
+				<?= $paginator->stats()?>
+			</div>
+			
 			<table class="table w100">
 				<tr>
 					<th>Foto</th>
 					<th>Titulo</th>
 					<th>Descripcion</th>
 					<th>Precio</th>
-					<th>Fecha</th>
 					<th class="centrado">Operaciones</th>
 				</tr>
 	
 			<?php foreach($anuncios as $anuncio){ ?>
 			<tr>
-				<td><a href='/Anuncio/show/<?= $anuncio->id ?>'><?= $anuncio->foto ?></a></td>
+				<td class="centrado">
+                    <a href="/anuncio/show/<?= $anuncio->id ?>">
+                       <img src="<?= ANUNCIO_IMAGE_FOLDER . '/' . ($anuncio->imagen ?? DEFAULT_ANUNCIO_IMAGE) ?>"
+                        class="table-image" alt="Imagen de <?= $anuncio->titulo ?>"
+                        title="Imagen de <?= $anuncio->titulo ?>">
+                   </a>
+               </td>
 				<td><a href='/Anuncio/show/<?= $anuncio->id ?>'><?= $anuncio->titulo ?></a></td>.
 				<td><?= $anuncio->descripcion?></td>
 				<td><?= $anuncio->precio?></td>
-				<td><?= $anuncio->fecha?></td>
 				<td class="centrado">
 					<a href='/Anuncio/show/<?= $anuncio->id ?>'>Ver</a>-
 					<a href='/Anuncio/edit/<?= $anuncio->id ?>'>Editar</a>-
@@ -52,6 +73,7 @@
 			</tr>
 			<?php } ?>	
 			</table>
+			<?= $paginator->ellipsisLinks()?>
 			<?php }else{ ?>
 			<div class="danger p2">
 				<p>No hay anuncios que mostrar.</p>
