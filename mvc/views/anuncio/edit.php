@@ -43,21 +43,21 @@
                         <input class="button" type="reset" value="Reset">
                     </div>
                 </div>
-                <div class="flex1 centrado">
+               </form>   
+        	<div class="flex1 centrado">
                     <figure>
                         <img src="<?= ANUNCIO_IMAGE_FOLDER . '/' . ($anuncio->imagen ?? DEFAULT_ANUNCIO_IMAGE) ?>"
                             class="cover enlarge-image" id="preview-image" alt="Imagen de <?= $anuncio->titulo ?>">
                         <figcaption>Imagen de <?= $anuncio->titulo ?></figcaption>
                         <?php if ($anuncio->imagen) { ?>
-                            <form method="POST" action="/anuncio/dropimage" class="no-border">
+                            <form method="POST" action="/anuncio/droppicture" class="no-border">
                                 <input type="hidden" name="id" value="<?= $anuncio->id ?>">
                                 <input class="button-danger" type="submit" name="borrar" value="Eliminar imagen">
                             </form>
                         <?php } ?>
                     </figure>
                 </div>
-            </div>
-        </form>
+                </div>
         <div class="centrado mt2">
             <a class="button" onclick="history.back()">Atrás</a>
             <a class="button" href="/anuncio/list">Lista de Anuncios</a>

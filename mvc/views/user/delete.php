@@ -8,7 +8,7 @@
     <!-- META -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Eliminación de usuarios de <?= APP_NAME ?>" />
-    <meta name="author" content="Xavi Quesada" />
+    <meta name="author" content="Robert Sallent" />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
@@ -32,7 +32,7 @@
         <h2>Borrar Usuario</h2>
 
         <form method="POST" class="centered" action="/user/destroy">
-            <p>¿Confirmar el borrado del usuario <b><?= $user->displayname ?></b>?</p>
+            <p>¿Estas seguro de que quieres eliminar el usuario <b><?= $user->displayname ?></b>?</p>
             <input type="hidden" name="id" value="<?= $user->id ?>">
             <input class="button-danger" type="submit" name="borrar" value="Borrar">
         </form>

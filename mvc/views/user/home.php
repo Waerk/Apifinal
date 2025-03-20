@@ -41,7 +41,7 @@
                 <!-- Botón Editar solo para el usuario autenticado -->
                 <?php if (Login::user()->id === $user->id) { ?>
                     <div class="centrado mt2">
-                        <a class="button" href="/user/editprofile">Editar mi perfil</a>
+                        <a class="button" href="/user/editProfile">Editar mi usuario</a>
                     </div>
                 <?php } ?>
             </section>
@@ -66,26 +66,6 @@
                 </div>
             </section>
         </div>
-
-        <!-- Formulario para cambiar contraseña -->
-        <section class="mt2">
-            <h3>Cambiar contraseña</h3>
-            <form method="POST" action="/user/changepassword" class="no-border">
-                <label>Contraseña actual</label>
-                <input type="password" name="currentpassword" value="" required>
-                <br>
-                <label>Nueva contraseña</label>
-                <input type="password" name="newpassword" value="" required>
-                <br>
-                <label>Repetir nueva contraseña</label>
-                <input type="password" name="repeatpassword" value="" required>
-                <br>
-                <div class="centrado mt2">
-                    <input class="button" type="submit" name="cambiar" value="Cambiar contraseña">
-                    <input class="button" type="reset" name="reset" value="Reset">
-                </div>
-            </form>
-        </section>
         <div class="centrado mt2">
             <a class="button" onclick="history.back()">Atrás</a>
             <a class="button" href="/logout">Cerrar sesión</a>

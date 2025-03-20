@@ -4,12 +4,12 @@
 
 <head>
     <meta charset="utf-8" />
-    <title>Create - <?= APP_NAME ?></title>
+    <title>Crear Usuario - <?= APP_NAME ?></title>
 
     <!-- META -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Formulario para crear un nuevo usuario en <?= APP_NAME ?>" />
-    <meta name="author" content="Xavi Quesada" />
+    <meta name="author" content="Robert Sallent" />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/png" />

@@ -7,7 +7,7 @@
     <title>Lista de usuarios - <?= APP_NAME ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Listado de usuarios de <?= APP_NAME ?>" />
-    <meta name="author" content="Xavi Quesada" />
+    <meta name="author" content="Robert Sallent" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
     <?= $template->css() ?>
 </head>
@@ -75,7 +75,6 @@
                         <td><?= $user->blocked_at ? 'Bloqueado' : 'Activo' ?></td>
                         <td class="centrado">
                             <a class="button" href="/user/show/<?= $user->id ?>">Ver</a>
-                            <a class="button" href="/user/edit/<?= $user->id ?>">Editar</a>
                             <a class="button-danger" href="/user/delete/<?= $user->id ?>">Borrar</a>
                             <?php if ($user->blocked_at) { ?>
                                 <a class="button-success" href="/user/unblock/<?= $user->id ?>">Desbloquear</a>

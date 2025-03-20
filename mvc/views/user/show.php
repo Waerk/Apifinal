@@ -6,11 +6,11 @@
     <title>Detalles de usuario - <?= APP_NAME ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Detalles de usuarios de <?= APP_NAME ?>" />
-    <meta name="author" content="Xavi Quesada" />
+    <meta name="author" content="Robert Sallent" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
     <?= $template->css() ?>
 
-    <!-- JS para ampliar imagen -->
+ 
     <script src="/js/Bigpicture.js"></script>
 </head>
 
@@ -27,7 +27,7 @@
     <main>
         <h1><?= APP_NAME ?></h1>
 
-        <!-- Sección de Detalles del usuario -->
+
         <section id="detalles" class="flex-container gap2">
             <div class="flex2">
                 <h2><?= $user->displayname ?></h2>
@@ -46,40 +46,8 @@
             </figure>
         </section>
 
-        <!-- Después de la sección de detalles -->
-        <section class="mt2">
-            <h2>Anuncios de <?= $user->displayname ?></h2>
-            <?php
-            $anuncios = $user->anuncios();
-            if ($anuncios) { ?>
-                <table class="table w100 centered-block">
-                    <tr>
-                        <th>Título</th>
-                        <th>Descripción</th>
-                        <th>Precio</th>
-                        <th>Imagen</th>
-                    </tr>
-                    <?php foreach ($anuncios as $anuncio) { ?>
-                        <tr>
-                            <td><?= $anuncio->titulo ?></td>
-                            <td><?= $anuncio->descripcion ?></td>
-                            <td><?= $anuncio->precio ?> €</td>
-                            <td>
-                                <?php if ($anuncio->imagen) { ?>
-                                    <img src="/images/anuncios/<?= $anuncio->imagen ?>" class="table-image" alt="Imagen de <?= $anuncio->titulo ?>">
-                                <?php } else { ?>
-                                    Sin imagen
-                                <?php } ?>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                </table>
-            <?php } else { ?>
-                <div class="warning p2">Este usuario no tiene anuncios publicados.</div>
-            <?php } ?>
-        </section>
+        
 
-        <!-- Botones de acción -->
         <div class="centrado">
             <a class="button" onclick="history.back()">Atrás</a>
             <a class="button" href="/user/list">Lista de usuarios</a>

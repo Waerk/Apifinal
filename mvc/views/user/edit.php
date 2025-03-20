@@ -6,10 +6,11 @@
     <title>Edición de usuario - <?= APP_NAME ?></title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Edición de usuarios de <?= APP_NAME ?>" />
-    <meta name="author" content="Xavi Quesada" />
+    <meta name="author" content="Robert Sallent" />
     <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
     <?= $template->css() ?>
     <script src="/js/Preview.js"></script>
+    <script src="/js/Bigpicture.js"></script>
 </head>
 
 <body>
@@ -49,7 +50,7 @@
                     <input type="text" name="cp" value="<?= old('cp', $user->cp) ?>">
                     <br>
                     <?php if ($isAdminEdit) { ?>
-                        <label>Contraseña (dejar en blanco para no cambiar)</label>
+                        <label>Contraseña</label>
                         <input type="password" name="password" value="">
                         <br>
                         <label>Repetir contraseña</label>
@@ -72,10 +73,10 @@
                         class="cover enlarge-image" alt="Foto de <?= $user->displayname ?>"
                         id="preview-image">
                     <figcaption>Foto de <?= $user->displayname ?></figcaption>
-                    <?php if ($user->foto) { ?>
+                    <?php if ($user->imagen) { ?>
                         <form method="POST" action="<?= $isAdminEdit ? '/user/droppicture' : '/user/dropfoto' ?>" class="no-border">
                             <input type="hidden" name="id" value="<?= $user->id ?>">
-                            <input type="submit" class="button-danger" name="borrar" value="Eliminar foto">
+                            <input type="submit" class="button-danger" name="borrar" value="Borrar">
                         </form>
                     <?php } ?>
                 </figure>

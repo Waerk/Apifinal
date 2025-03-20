@@ -8,7 +8,7 @@
     <!-- META -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="Formulario de registro para <?= APP_NAME ?>" />
-    <meta name="author" content="Xavi Quesada" />
+    <meta name="author" content="Robert Sallent" />
 
     <!-- FAVICON -->
     <link rel="shortcut icon" href="/favicon.ico" type="image/png" />
@@ -86,7 +86,7 @@
 
     <?= $template->footer(); ?>
 
-    <!-- Script para validar email y previsualización -->
+ 
     <script>
         window.addEventListener('load', function() {
             // Previsualización de la imagen
@@ -96,7 +96,7 @@
                 previewImage.src = URL.createObjectURL(this.files[0]);
             });
 
-            // Comprobación de email
+       
             const email = document.getElementById('email');
             const comprobacion = document.getElementById('comprobacion');
             email.addEventListener('change', function() {
@@ -116,7 +116,7 @@
             });
         });
 
-        // Función básica de validación (puedes personalizarla)
+       
         function validateForm() {
             const password = document.querySelector('input[name="password"]').value;
             const repeatPassword = document.querySelector('input[name="repeatpassword"]').value;
