@@ -38,7 +38,7 @@
 					<br>
 					<label>Precio</label>
 					<input type="number" name="precio" value="<?= old('precio')?>">
-					<br>
+					<br>					
 					<label>Imagen</label>
                     <input type="file" name="imagen" accept="image/*" id="file-with-preview">
 					<div class="centered mt2">

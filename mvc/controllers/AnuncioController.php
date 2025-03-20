@@ -62,6 +62,8 @@ class AnuncioController extends Controller{
             $anuncio->save();
             
             $file = request()->file('imagen', 8000000, ['image/png', 'image/jpeg', 'image/gif', 'image/webp']);
+            
+            
             if($file){
                 $anuncio->imagen = $file->store('../public/' . ANUNCIO_IMAGE_FOLDER, 'anuncio_');
                 $anuncio->update();
